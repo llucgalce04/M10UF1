@@ -1,7 +1,3 @@
-DROP DATABASE IF EXISTS real_state;
-CREATE DATABASE real_state;
-USE real_state;
-
 DROP TABLE IF EXISTS countries;
 DROP TABLE IF EXISTS cities;
 DROP TABLE IF EXISTS streets;
@@ -57,19 +53,8 @@ id_zip_code INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
 zip_code VARCHAR(32)
 );
 
-DROP TABLE IF EXISTS addresses;
-CREATE TABLE addresses(
-  id_address INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  id_street INT UNSIGNED,
-  id_street_number INT UNSIGNED,
-  id_staircase INT UNSIGNED,
-  id_floor INT UNSIGNED,
-  id_door INT UNSIGNED,
-  id_zip_code INT UNSIGNED,
-  FOREIGN KEY (id_street) REFERENCES streets(id_street),
-  FOREIGN KEY (id_street_number) REFERENCES streets_numbers(id_street_number),
-  FOREIGN KEY (id_staircase) REFERENCES staircases(id_staircase),
-  FOREIGN KEY (id_floor) REFERENCES floors(id_floor),
-  FOREIGN KEY (id_door) REFERENCES doors(id_door),
-  FOREIGN KEY (id_zip_code) REFERENCES zip_codes(id_zip_code)
-);
+
+
+
+
+
