@@ -364,11 +364,12 @@ VALUES
 
 ------------ VIEWS Y FUNCIONES ------------
 
+/*
 DROP VIEW IF EXISTS contar_personas_por_planeta;
 CREATE  contar_personas_por_planeta 
 SELECT civilizations.planet, COUNT(*) AS count, GROUP_CONCAT(civilizations.name) AS civilizations, SUM(civilizations.people) AS global_people
 FROM civilizations 
-GROUP BY civilizations.planet;
+GROUP BY civilizations.planet;*/
 
 DROP VIEW IF EXISTS beneficios_por_planeta;
 CREATE VIEW beneficios_por_planeta 
