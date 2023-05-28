@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS Evil_Corp;
 CREATE DATABASE Evil_Corp;
 USE Evil_Corp;
 
--- Drops
+------------ DROPS ------------
 DROP TABLE IF EXISTS users_addresses;
 DROP TABLE IF EXISTS treatments;
 DROP TABLE IF EXISTS diagnoses;
@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS countries;
 DROP TABLE IF EXISTS planets;
 DROP TABLE IF EXISTS galaxies;
 
--- Tables
+------------ TABLES ------------
 CREATE TABLE users (
     id_user INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(64) NOT NULL,
@@ -157,44 +157,44 @@ CREATE TABLE civilizations (
     dead BOOLEAN DEFAULT false
 );
 
--- Inserción de datos en la tabla users
+------------ INSERTS ------------
 INSERT INTO users (username, first_name, last_name, email, password, country, birth_date)
 VALUES
-    ('user1', 'John', 'Doe', 'john.doe@example.com', 'password123', 'USA', '1990-05-15'),
-    ('user2', 'Jane', 'Smith', 'jane.smith@example.com', 'password456', 'CAN', '1995-08-22'),
-    ('user3', 'Michael', 'Johnson', 'michael.johnson@example.com', 'password789', 'UK', '1988-11-10'),
-    ('user4', 'Emily', 'Brown', 'emily.brown@example.com', 'passwordabc', 'AUS', '1992-03-27'),
-    ('user5', 'Daniel', 'Davis', 'daniel.davis@example.com', 'passwordxyz', 'GER', '1997-06-18');
+    ('user1', 'Ramon', 'Sir', 'ramon@example.com', 'password098', 'ES', '1999-02-11'),
+    ('user2', 'Felix', 'Jua', 'felix@example.com', 'password768', 'IS', '2000-01-12'),
+    ('user3', 'Xavier', 'Andreu', 'xavier@example.com', 'password789', 'UK', '2004-02-17'),
+    ('user4', 'Emma', 'Rosa', 'emma@example.com', 'password123', 'FR', '2006-04-19'),
+    ('user5', 'Loli', 'Davis', 'lolis@example.com', 'password777', 'GER', '02-01-1969');
 
 
--- Inserción de datos en la tabla medicines
+------------ MEDICINES ------------
 INSERT INTO medicines (medicine, cost, price)
 VALUES
-    ('Aspirina', 5.99, 9.99),
-    ('Paracetamol', 3.49, 6.99),
-    ('Ibuprofeno', 4.99, 8.99),
-    ('Amoxicilina', 7.99, 12.99),
-    ('Omeprazole', 6.49, 10.99);
+    ('Aspirina', 12, 7),
+    ('Paracetamol', 6.99, 7.75),
+    ('Ibuprofeno', 9, 6.5),
+    ('Amoxicilina', 4, 7),
+    ('Omeprazole', 10, 11);
 
--- Inserción de datos en la tabla doctors
+------------ DOCTORS ------------
 INSERT INTO doctors (doctor)
 VALUES
-    ('Dr. Smith'),
-    ('Dr. Johnson'),
-    ('Dr. Williams'),
-    ('Dr. Brown'),
-    ('Dr. Davis');
+    ('Dr. Josep'),
+    ('Dr. Manin'),
+    ('Dr. Toni'),
+    ('Dr. Lolito'),
+    ('Dr. Dali');
 
--- Inserción de datos en la tabla conditions
+------------ CONDITIONS ------------
 INSERT INTO conditions (condicion, symptoms, description, deadly)
 VALUES
-    ('Cold', 'Sneezing, coughing', 'Common viral infection', false),
+    ('Hot', 'Freeze, coughing', 'Common viral infection', true),
     ('Flu', 'Fever, body aches', 'Viral respiratory illness', false),
     ('Hypertension', 'High blood pressure', 'Chronic medical condition', true),
     ('Diabetes', 'High blood sugar levels', 'Metabolic disorder', true),
     ('Asthma', 'Shortness of breath, wheezing', 'Chronic respiratory condition', false);
 
--- Inserción de datos en la tabla diagnoses
+------------ DIAGNOSES ------------
 INSERT INTO diagnoses (diagnosis, datetime, id_doctor, id_user, id_condition)
 VALUES
     ('Common cold', '2023-05-28 10:00:00', 1, 1, 1),
@@ -203,40 +203,41 @@ VALUES
     ('Type 2 diabetes', '2023-05-31 16:45:00', 4, 4, 4),
     ('Asthma exacerbation', '2023-06-01 11:30:00', 5, 5, 5);
 
--- Inserción de datos en la tabla treatments
+------------ TREATMENTS ------------
 INSERT INTO treatments (id_condition, id_diagnosis, id_medicine)
 VALUES (1, 1, 1);
 
--- Inserción de datos en la tabla countries
+------------ COUNTRIES ------------
 INSERT INTO countries (country)
 VALUES
-    ('USA'),
     ('CAN'),
     ('MEX'),
-    ('GBR'),
-    ('FRA'),
+    ('FR'),
+    ('ESP'),
     ('GER'),
     ('ESP'),
+    ('EEU'),
     ('ITA'),
-    ('JPN'),
-    ('AUS');
+    ('AUS'),
+    ('UK'),
+    ('JPN');
 
--- Inserción de datos en la tabla cities
+------------ CITIES ------------
 INSERT INTO cities (city, id_country)
 VALUES
-    ('New York', 1),
-    ('Toronto', 2),
-    ('Mexico City', 3),
-    ('London', 4),
-    ('Paris', 5),
-    ('Berlin', 6),
-    ('Madrid', 7),
+    ('New York', 8),
+    ('Toronto', 1),
+    ('Mexico City', 2),
+    ('London', 10),
+    ('Paris', 3),
+    ('Berlin', 5),
+    ('Madrid', 4),
     ('Rome', 8),
-    ('Tokyo', 9),
-    ('Sydney', 10);
+    ('Tokyo', 11),
+    ('Sydney', 1);
 
 
--- Inserción de datos en la tabla streets
+------------ STREETS ------------
 INSERT INTO streets (street, id_city)
 VALUES
     ('Main Street', 1),
@@ -250,21 +251,21 @@ VALUES
     ('Via del Corso', 8),
     ('Ginza', 9);
 
--- Inserción de datos en la tabla streets_numbers
+------------ STREETS_NUMBERS ------------
 INSERT INTO streets_numbers (street_number)
 VALUES
-    ('123'),
-    ('456'),
-    ('789'),
-    ('10A'),
-    ('22B'),
+    ('985'),
+    ('678'),
+    ('234'),
+    ('444'),
+    ('333'),
     ('555'),
-    ('321'),
-    ('999'),
+    ('222'),
+    ('111'),
     ('777'),
-    ('1001');
+    ('234');
 
--- Inserción de datos en la tabla staircases
+------------ STAIRCASES ------------
 INSERT INTO staircases (staircase)
 VALUES
     ('A'),
@@ -272,14 +273,10 @@ VALUES
     ('C'),
     ('D'),
     ('E'),
-    ('F'),
-    ('G'),
-    ('H'),
-    ('I'),
-    ('J');
+    ('F');
 
 
--- Inserción de datos en la tabla floors
+------------ FLOORS ------------
 INSERT INTO floors (`floor`)
 VALUES
     ('1st Floor'),
@@ -293,37 +290,36 @@ VALUES
     ('9th Floor'),
     ('10th Floor');
 
--- Inserción de datos en la tabla doors
+------------ DOORS ------------
 INSERT INTO doors (door)
 VALUES
-    ('101'),
-    ('102'),
-    ('103'),
-    ('104'),
+    ('301'),
+    ('202'),
+    ('403'),
+    ('504'),
     ('105'),
     ('201'),
     ('202'),
     ('203'),
-    ('204'),
-    ('205');
+    ('404'),
+    ('705');
 
--- Inserción de datos en la tabla zip_codes
+------------ ZIP_CODES ------------
 INSERT INTO zip_codes (zip_code)
 VALUES
-    ('10001'),
-    ('10002'),
-    ('10003'),
-    ('10004'),
-    ('10005'),
-    ('20001'),
+    ('08358'),
+    ('24646'),
+    ('87362'),
+    ('23578'),
+    ('12567'),
+    ('46846'),
     ('20002'),
-    ('20003'),
+    ('35532'),
     ('20004'),
-    ('20005');
+    ('45745');
    
     
--- Inserción en la tabla galaxies
-
+------------ GALAXIES ------------
 INSERT INTO galaxies (galaxy_name) VALUES
 ('Andromeda'),
 ('Milky Way'),
@@ -331,8 +327,7 @@ INSERT INTO galaxies (galaxy_name) VALUES
 ('Sombrero'),
 ('Pinwheel');
 
--- Inserción de datos en la tabla planets
-
+------------ PLANETS ------------
 INSERT INTO planets (planet, id_galaxy)
 VALUES
     ('Mercury', 1),
@@ -347,22 +342,90 @@ VALUES
     ('Eris', 3);
 
 
--- Inserción de datos en la tabla addresses
+------------ ADDRESSES ------------
 INSERT INTO addresses (id_street, id_street_number, id_staircase, id_floor, id_door, id_zip_code, id_planet, id_galaxy)
 VALUES (1, 1, 1, 1, 1, 1, 1, 1);
+VALUES (2, 2, 2, 2, 2, 2, 2, 2);
+VALUES (3, 3, 3, 3, 3, 3, 3, 3);
 
--- Inserción de datos en la tabla civilizations
+------------ CIVILITZATIONS ------------
 INSERT INTO civilizations (name, planet, dead)
 VALUES
-    ('Zephyrians', 'Zephyria', false),
-    ('Aquanites', 'Atlantia', false),
-    ('Celestials', 'Astralis', false),
+    ('Mesopotamia', 'Earth', false),
+    ('Atantis', 'Atlantitis', false),
+    ('Portus', 'Portikus', false),
     ('Infernites', 'Pyrovia', false),
     ('Verdantians', 'Florania', false),
-    ('Lunarians', 'Lunaris', false),
-    ('Technocrats', 'Mechanica', false),
-    ('Shadowfellians', 'Umbrath', true),
-    ('Sylvanians', 'Arboria', false),
-    ('Crystalites', 'Crystallis', false);
+    ('Phoenicia', 'Aleris', false),
+    ('Sumer', 'Marth', false),
+    ('Sulican', 'Silician', true),
+    ('Assyra', 'Waterlandia', false),
+    ('Lolisimos', 'Lolis', false);
+
+------------ VIEWS Y FUNCIONES ------------
+
+DROP VIEW IF EXISTS contar_personas_por_planeta;
+CREATE  contar_personas_por_planeta 
+SELECT civilizations.planet, COUNT(*) AS count, GROUP_CONCAT(civilizations.name) AS civilizations, SUM(civilizations.people) AS global_people
+FROM civilizations 
+GROUP BY civilizations.planet;
+
+DROP VIEW IF EXISTS beneficios_por_planeta;
+CREATE VIEW beneficios_por_planeta 
+SELECT planets.planet, SUM(medicines.price - medicines.cost) AS total_benefits
+FROM medicines 
+JOIN planets ON medicines.id_planet = planets.id_planet
+GROUP BY planets.planet;
+
+
+DROP PROCEDURE IF EXISTS kill_civilization;
+DELIMITER $$
+
+CREATE PROCEDURE kill_civilization(IN name_civilitzation VARCHAR(50))
+BEGIN
+    DECLARE civilization_count INT;
+------------ Mirar las civilizations totales y comprobar cuantas hay ------------
+    SELECT COUNT(*) INTO civilization_count
+    FROM civilizations
+    WHERE name = name_civilitzation AND dead = true;
+    
+    IF civilization_count > 0 THEN
+        SELECT CONCAT('No hay civiliaciones psicopata deja de matarlas', name_civilitzation) AS message;
+    ELSE
+------------ Canviar el estado de la civilizacion de viva a muerta ------------
+        UPDATE civilizations
+        SET dead = true
+        WHERE name = name_civilitzation;
+        
+        SELECT CONCAT('Ha muerto la civilizacion: ', name_civilitzation) AS message;
+    END IF;
+END $$
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS matar_usuario;
+DELIMITER $$
+CREATE PROCEDURE matar_usuario(IN usuario_id INT)
+BEGIN
+  DECLARE usuario_nombre VARCHAR(50);
+  DECLARE usuario_muerto BOOLEAN;
+
+  -- Obtener el nombre y estado de muerte del usuario
+  SELECT name, dead INTO usuario_nombre, usuario_muerto
+  FROM users
+  WHERE id = usuario_id;
+  
+  -- Verificar si el usuario ya está muerto
+  IF usuario_muerto THEN
+    SELECT CONCAT('No puedes matar otra vez a ', usuario_nombre) AS resultado;
+  ELSE
+    -- Actualizar el estado del usuario a "muerto"
+    UPDATE users
+    SET dead = TRUE
+    WHERE id = usuario_id;
+  
+    SELECT CONCAT('HA MUERTO... ', usuario_nombre) AS resultado;
+  END IF;
+END$$
+DELIMITER ;
 
 
