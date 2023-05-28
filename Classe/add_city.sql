@@ -7,7 +7,7 @@ BEGIN
 DECLARE planet_id INT UNSIGNED;
 DECLARE country_id INT UNSIGNED;
 DECLARE city_id INT UNSIGNED;
-SELECT id_planet INTO planet_id FROM planets WHERE name =
+SELECT id_planet INTO planet_id FROM planets WHERE planets.planet =
 planet_name;
 IF planet_id IS NULL THEN
 INSERT INTO planets (name) VALUES (planet_name);

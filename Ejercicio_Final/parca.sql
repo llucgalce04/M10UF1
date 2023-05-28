@@ -1,2 +1,4 @@
 CREATE USER 'parca'@'localhost' IDENTIFIED BY 'parca';
-GRANT SELECT, UPDATE ON evilcorp.users TO 'parca'@'localhost';
+GRANT SELECT, UPDATE ON Evil_Corp.users TO 'parca'@'localhost';
+GRANT EXECUTE ON PROCEDURE Evil_Corp.matar_usuario_planeta TO 'parca'@'localhost';
+
