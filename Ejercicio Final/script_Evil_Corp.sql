@@ -164,7 +164,7 @@ VALUES
     ('user2', 'Felix', 'Jua', 'felix@example.com', 'password768', 'IS', '2000-01-12'),
     ('user3', 'Xavier', 'Andreu', 'xavier@example.com', 'password789', 'UK', '2004-02-17'),
     ('user4', 'Emma', 'Rosa', 'emma@example.com', 'password123', 'FR', '2006-04-19'),
-    ('user5', 'Loli', 'Davis', 'lolis@example.com', 'password777', 'GER', '02-01-1969');
+    ('user5', 'Loli', 'Davis', 'lolis@example.com', 'password777', 'GER', '1969-02-01');
 
 
 ------------ MEDICINES ------------
