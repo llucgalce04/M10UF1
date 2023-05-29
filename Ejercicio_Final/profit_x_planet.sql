@@ -1,5 +1,5 @@
-CREATE VIEW medprices AS
-SELECT planets.id_planet, planets.planet, SUM(medicines.price) AS preu FROM planets
+CREATE VIEW profit_4_planet AS
+SELECT planets.id_planet, planets.planet, SUM(medicines.price) AS profit FROM planets
 
 LEFT JOIN countries 
 	ON planets.id_planet=countries.id_planet

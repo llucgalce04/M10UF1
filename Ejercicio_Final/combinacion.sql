@@ -1,13 +1,13 @@
-DROP PROCEDURE IF EXISTS parcaproc;
+DROP PROCEDURE IF EXISTS matar_usuario_planeta;
 
 DELIMITER $$
 
-CREATE PROCEDURE parcaproc(IN planetita VARCHAR(64))
+CREATE PROCEDURE matar_usuario_planeta(IN planesito VARCHAR(64))
 BEGIN
 	DECLARE user_name VARCHAR(64);
-	SET user_name = randomuser(planetita);
+	SET user_name = randomuser(planesito);
 	
-	CALL deadproc(user_name);
+	CALL kill_user(user_name);
 
 
 

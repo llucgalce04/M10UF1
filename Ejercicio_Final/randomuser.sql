@@ -5,9 +5,9 @@ DELIMITER $$
 CREATE FUNCTION randomuser(planeta VARCHAR(64))
 RETURNS VARCHAR(64)
 BEGIN
-	DECLARE ruser VARCHAR(64);
+	DECLARE random_user VARCHAR(64);
 
-	SELECT username INTO ruser FROM users
+	SELECT username INTO random_user FROM users
 
 	LEFT JOIN adresses ON users.id_user=adresses.id_user
 	LEFT JOIN streets ON adresses.id_street=streets.id_street
@@ -19,7 +19,7 @@ BEGIN
 	ORDER BY RAND()
 	LIMIT 1;
 
-	RETURN ruser;
+	RETURN random_user;
 
 END $$
 
