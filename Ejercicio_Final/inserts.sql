@@ -235,19 +235,19 @@ INSERT INTO zip_codes (zip_code)
 VALUES ('97531');
 
 --------- ADDRESSES ---------
-INSERT INTO adresses (id_street, id_street_number, id_staircase, id_floor, id_zip_code, id_user)
+INSERT INTO addresses (id_street, id_street_number, id_staircase, id_floor, id_zip_code, id_user)
 VALUES (1, 1, 1, 1, 1, 1);
 
-INSERT INTO adresses (id_street, id_street_number, id_staircase, id_floor, id_zip_code, id_user)
+INSERT INTO addresses (id_street, id_street_number, id_staircase, id_floor, id_zip_code, id_user)
 VALUES (2, 2, 2, 2, 2, 2);
 
-INSERT INTO adresses (id_street, id_street_number, id_staircase, id_floor, id_zip_code, id_user)
+INSERT INTO addresses (id_street, id_street_number, id_staircase, id_floor, id_zip_code, id_user)
 VALUES (3, 3, 3, 3, 3, 3);
 
-INSERT INTO adresses (id_street, id_street_number, id_staircase, id_floor, id_zip_code, id_user)
+INSERT INTO addresses (id_street, id_street_number, id_staircase, id_floor, id_zip_code, id_user)
 VALUES (4, 4, 4, 4, 4, 4);
 
-INSERT INTO adresses (id_street, id_street_number, id_staircase, id_floor, id_zip_code, id_user)
+INSERT INTO addresses (id_street, id_street_number, id_staircase, id_floor, id_zip_code, id_user)
 VALUES (5, 5, 5, 5, 5, 5);
 
 --------- CONSPIRATIONS ---------
