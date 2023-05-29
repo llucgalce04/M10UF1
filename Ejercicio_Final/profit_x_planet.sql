@@ -7,10 +7,10 @@ LEFT JOIN cities
 	ON countries.id_country=cities.id_country
 LEFT JOIN streets 
 	ON cities.id_city=streets.id_city
-LEFT JOIN adresses 
-	ON streets.id_street=adresses.id_street
+LEFT JOIN addresses 
+	ON streets.id_street=addresses.id_street
 LEFT JOIN users 
-	ON adresses.id_user=users.id_user
+	ON addresses.id_user=users.id_user
 LEFT JOIN diagnoses
 	ON users.id_user=diagnoses.id_user
 LEFT JOIN treatments
