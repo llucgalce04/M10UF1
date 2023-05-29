@@ -1,14 +1,14 @@
 DROP DATABASE IF EXISTS Evil_Corp;
 CREATE DATABASE Evil_Corp;
 USE Evil_Corp;
---HealthCare:
+-------- HEALTH CARE DROPS --------
 DROP TABLE IF EXISTS treatments;
 DROP TABLE IF EXISTS diagnoses;
 DROP TABLE IF EXISTS doctors;
 DROP TABLE IF EXISTS conditions;
 DROP TABLE IF EXISTS medicines;
 
---RealState:
+-------- REAL STATE DROPS --------
 DROP TABLE IF EXISTS adresses;
 DROP TABLE IF EXISTS zip_codes;
 DROP TABLE IF EXISTS doors;
@@ -20,18 +20,15 @@ DROP TABLE IF EXISTS cities;
 DROP TABLE IF EXISTS countries;
 DROP TABLE IF EXISTS planets;
 
---Conspiration:
+-------- CONSPIRATIONS DROPS --------
 DROP TABLE IF EXISTS users_conspirations;
 DROP TABLE IF EXISTS illuminats;
 DROP TABLE IF EXISTS conspirations;
 
---users:
+-------- USERS DROPS --------
 DROP TABLE IF EXISTS users;
 
---DROPS fets
---Ara anem a per els CREATEs:
---Creem a l'inrevés de com els hem eliminat:
---Users:
+-------- CREATE USERS --------
 CREATE TABLE users(
 	id_user INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	username VARCHAR(64) UNIQUE NOT NULL,
@@ -40,7 +37,7 @@ CREATE TABLE users(
 	name VARCHAR(64) NOT NULL,
 	surname VARCHAR(64) NOT NULL
 );
---HealthCare
+-------- CREATE HEALTHCARE --------
 CREATE TABLE medicines(
 	id_medicine INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	medicine VARCHAR(192) NOT NULL,
@@ -78,7 +75,7 @@ CREATE TABLE treatments(
 	FOREIGN KEY (id_treatments) REFERENCES diagnoses(id_diagnosis),
 	FOREIGN KEY (id_medicine) REFERENCES medicines(id_medicine)
 );
---RealState:
+-------- CREATE REAL STATE --------
 CREATE TABLE planets(
 	id_planet INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	planet VARCHAR(64)
@@ -146,7 +143,7 @@ CREATE TABLE adresses(
 	FOREIGN KEY (id_user) REFERENCES users(id_user)
 );
 
---Conspiration
+-------- CREATE CONSPIRATIONS --------
 CREATE TABLE conspirations(
 	id_conspiration INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	conspiration TEXT NOT NULL
