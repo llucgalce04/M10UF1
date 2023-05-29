@@ -1,4 +1,4 @@
-drop view costes;
+drop view IF exists profit_medicine;
 create view profit_medicine as select treatments.id_medicine,
 COUNT(medicine) medicines, cost,
 SUM(cost) total_cost_production, price,

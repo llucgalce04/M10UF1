@@ -1,4 +1,4 @@
-DROP FUNCTION get_city;
+DROP FUNCTION IF EXISTS get_city;
 DELIMITER $$
 CREATE FUNCTION get_city(city_name VARCHAR(64),
 country_name VARCHAR(64), planet_name VARCHAR(64))
